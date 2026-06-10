@@ -2,119 +2,89 @@
 <html lang="en">
   <head>
     <meta charset="utf-8" />
-    <meta
-      name="viewport"
-      content="width=device-width, initial-scale=1, viewport-fit=cover"
-    />
-    <title>Anu & John | Wedding Invitation</title>
-    <meta
-      name="description"
-      content="Anu and John invite you to celebrate their wedding on July 12, 2026 at 9 AM in Kanjirappally."
-    />
-    <meta property="og:title" content="Anu & John | Wedding Invitation" />
-    <meta
-      property="og:description"
-      content="Join Anu and John on July 12, 2026 at 9 AM in Kanjirappally."
-    />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Angel & Febin | Wedding Invitation</title>
+    <meta name="description" content="Angel and Febin invite you to celebrate their wedding." />
+    <meta property="og:title" content="Angel & Febin | Wedding Invitation" />
     <meta property="og:type" content="website" />
-    <meta property="og:image" content="assets/couple-cover.jpg" />
-    <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#15110d" />
+    <meta property="og:image" content="assets/IMG_8494.JPG.jpeg />
+    <meta name="theme-color" content="#0d1f17" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
     <link rel="preload" href="assets/couple-hero.jpg" as="image" />
     <link rel="preload" href="assets/finding-love.mp3" as="audio" />
     <link rel="stylesheet" href="styles.css" />
     <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="rings.js"></script>
   </head>
   <body>
-    <audio
-      id="music"
-      src="assets/finding-love.mp3"
-      preload="metadata"
-      loop
-    ></audio>
+    <audio id="music" src="assets/finding-love.mp3" preload="metadata" loop></audio>
 
+    <!-- Cover screen -->
     <div class="cover" id="cover" aria-label="Opening wedding invitation">
-      <div class="cover__image" aria-hidden="true"></div>
-      <div class="cover__veil"></div>
+      <div class="cover__bg" aria-hidden="true"></div>
+      <div class="cover__overlay"></div>
       <div class="cover__content">
-        <p class="eyebrow">Wedding Invitation</p>
+        <div class="cover__monogram" aria-hidden="true">A <span>&amp;</span> F</div>
+        <p class="label">You are cordially invited</p>
         <h1>
-          <span data-edit="brideName">Anu</span> <em>&amp;</em>
-          <span data-edit="groomName">John</span>
+          <span data-edit="brideName">Angel</span>
+          <em>&amp;</em>
+          <span data-edit="groomName">Febin</span>
         </h1>
-        <p class="cover__date" data-edit="displayDate">July 12 2026</p>
-        <button
-          class="open-button"
-          id="openInvite"
-          type="button"
-          aria-label="Open invitation"
-        >
-          <span>Tap to open</span>
+        <p class="cover__date" data-edit="displayDate">December 28 · 2025</p>
+        <button class="open-btn" id="openInvite" type="button" aria-label="Open invitation">
+          Open Invitation
         </button>
       </div>
     </div>
 
-    <main class="site-shell" id="invitation">
-      <button
-        class="music-toggle"
-        id="musicToggle"
-        type="button"
-        aria-label="Toggle background music"
-      >
-        <span class="music-toggle__bars" aria-hidden="true"
-          ><i></i><i></i><i></i
-        ></span>
+    <!-- Main invitation -->
+    <main class="shell" id="invitation">
+
+      <!-- Music toggle -->
+      <button class="music-btn" id="musicToggle" type="button" aria-label="Toggle background music">
+        <span class="music-btn__icon" aria-hidden="true"><i></i><i></i><i></i></span>
         <span id="musicLabel">Music</span>
       </button>
 
-      <section class="hero section">
-        <div class="hero__media reveal">
-          <img
-            src="assets/couple-hero.jpg"
-            alt="Anu and John wedding portrait"
-          />
+      <!-- Hero -->
+      <section class="hero wrap reveal">
+        <div class="hero__photo">
+          <img src="assets/IMG_8496.JPG.jpeg" alt="Angel and Febin" />
+          <div class="hero__photo-border" aria-hidden="true"></div>
         </div>
-        <div class="hero__copy reveal">
-          <p class="eyebrow">Together with their families</p>
-          <h2><span data-edit="coupleName">Anu &amp; John</span></h2>
-          <p class="lead">
-            With hearts full of joy, we invite you to share in the beginning of
-            our forever. Your presence will make our celebration warmer,
-            brighter, and complete.
+        <div class="hero__text">
+          <p class="label">Together with their families</p>
+          <h2 data-edit="coupleName">Angel &amp; Febin</h2>
+          <p class="body-text">
+            With hearts full of gratitude, we invite you to witness
+            our union and share in this moment of joy.
           </p>
-          <div class="scroll-cue" aria-hidden="true">
-            <span></span>
-          </div>
+          <div class="divider" aria-hidden="true"><span></span></div>
         </div>
       </section>
 
-      <section
-        class="scratch-section section reveal"
-        aria-labelledby="scratchTitle"
-      >
-        <p class="eyebrow">A little moment to reveal</p>
+      <!-- Scratch card -->
+      <section class="section wrap reveal" aria-labelledby="scratchTitle">
+        <p class="label">A little surprise</p>
         <h2 id="scratchTitle">Save the Date</h2>
         <div class="scratch-card" id="scratchCard">
-          <div class="scratch-card__secret">
-            <p class="scratch-card__month">July</p>
-            <strong>12</strong>
-            <span>2026 at 9 AM</span>
+          <div class="scratch-secret">
+            <p class="scratch-secret__month">December</p>
+            <strong>28</strong>
+            <span>2025 · 10 AM</span>
           </div>
-          <canvas
-            id="scratchCanvas"
-            aria-label="Scratch to reveal July 12 2026 at 9 AM"
-          ></canvas>
+          <canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas>
         </div>
-        <p class="hint" id="scratchHint">
-          Swipe over the card to reveal the wedding date
-        </p>
+        <p class="hint" id="scratchHint">Swipe to reveal the date</p>
       </section>
 
-      <section
-        class="countdown section reveal"
-        aria-labelledby="countdownTitle"
-      >
-        <p class="eyebrow">Counting every heartbeat</p>
+      <!-- Countdown -->
+      <section class="section wrap reveal" aria-labelledby="countdownTitle">
+        <p class="label">Counting down to forever</p>
         <h2 id="countdownTitle">Until We Say I Do</h2>
         <div class="timer" id="timer" aria-live="polite">
           <div><strong id="days">00</strong><span>Days</span></div>
@@ -124,90 +94,76 @@
         </div>
       </section>
 
-      <section class="story section" aria-label="Couple portraits">
-        <article class="portrait reveal">
-          <img
-            src="assets/img_8502.jpg.jpeg"
-            alt="Wedding portrait at sunset"
-            loading="lazy"
-          />
-          <div>
-            <p class="eyebrow">Blessed beginning</p>
-            <h2>Two lives, one promise</h2>
-            <p>
-              We are grateful for the love that brought us here and for the
-              people who have walked beside us. Come celebrate a morning of
-              prayer, joy, and new beginnings.
+      <!-- 3D Rings & Game -->
+      <section class="section wrap reveal rings-section" aria-labelledby="ringsTitle">
+        <p class="label">Our promise</p>
+        <h2 id="ringsTitle">The Rings</h2>
+        <p class="body-text rings-sub">Two rings. One forever. Drag to spin — then play a little game.</p>
+        <div id="rings-mount"></div>
+      </section>
+
+      <!-- Story panels -->
+      <section class="story wrap" aria-label="Our story">
+        <article class="panel reveal">
+          <div class="panel__photo">
+            <img src="assets/IMG_8502.JPG.jpeg" alt="Angel and Febin portrait" loading="lazy" />
+          </div>
+          <div class="panel__copy">
+            <p class="label">Our journey</p>
+            <h2>Two souls, one story</h2>
+            <p class="body-text">
+              Every love story is beautiful, but ours is our favourite.
+              We are grateful for the grace that brought us together.
             </p>
           </div>
         </article>
-        <article class="portrait portrait--flip reveal">
-          <img
-            src="assets/couple-street.jpg"
-            alt="Elegant wedding couple portrait"
-            loading="lazy"
-          />
-          <div>
-            <p class="eyebrow">With love</p>
-            <h2>Join our celebration</h2>
-            <p>
-              Your blessings and smiles are the most beautiful gifts as we step
-              into married life.
+        <article class="panel panel--mirror reveal">
+          <div class="panel__photo">
+            <img src="assets/IMG_8500.JPG.jpeg" alt="Candid wedding portrait" loading="lazy" />
+          </div>
+          <div class="panel__copy">
+            <p class="label">With love</p>
+            <h2>Share our joy</h2>
+            <p class="body-text">
+              Your presence, blessings, and laughter are the most precious
+              gifts as we step into this new chapter.
             </p>
           </div>
         </article>
       </section>
 
-      <section class="gallery section reveal" aria-labelledby="galleryTitle">
-        <p class="eyebrow">Memories in light</p>
+      <!-- Gallery -->
+      <section class="section wrap reveal" aria-labelledby="galleryTitle">
+        <p class="label">Captured moments</p>
         <h2 id="galleryTitle">Gallery</h2>
-        <div class="gallery__grid">
-          <img
-            src="assets/couple-arch.jpg"
-            alt="Couple portrait near arches"
-            loading="lazy"
-          />
-          <img
-            src="assets/couple-desert.jpg"
-            alt="Couple portrait outdoors"
-            loading="lazy"
-          />
-          <img
-            src="assets/couple-cover.jpg"
-            alt="Wedding photography cover portrait"
-            loading="lazy"
-          />
-          <img
-            src="assets/couple-sunset.jpg"
-            alt="Sunset wedding portrait"
-            loading="lazy"
-          />
+        <div class="gallery">
+          <img src="assets/IMG_8497.JPG.jpeg" alt="Portrait near arches" loading="lazy" />
+          <img src="assets/IMG_8498.JPG.jpeg" alt="Garden portrait" loading="lazy" />
+          <img src="assets/IMG_8495.JPG.jpeg" alt="Cover portrait" loading="lazy" />
+          <img src="assets/IMG_8493.JPG.jpeg" alt="Evening portrait" loading="lazy" />
+          <img src="assets/IMG_8492.JPG.jpeg" alt="Evening portrait" loading="lazy" />
         </div>
       </section>
 
-      <section class="venue section reveal" aria-labelledby="venueTitle">
-        <p class="eyebrow">Wedding ceremony</p>
+      <!-- Venue -->
+      <section class="venue-section section wrap reveal" aria-labelledby="venueTitle">
+        <p class="label">Wedding ceremony</p>
         <h2 id="venueTitle" data-edit="venue">Kanjirappally</h2>
-        <p class="venue__detail">July 12 2026 <span></span> 9 AM</p>
-        <p>
-          We would be honored to have you with us at Kanjirappally as we begin
-          this sacred chapter together.
+        <p class="venue-detail">December 28 · 2025 <span></span> 10 AM</p>
+        <p class="body-text">
+          We would be honoured to have you beside us as we begin this sacred journey together.
         </p>
-        <a
-          class="map-button"
-          id="mapButton"
-          href="https://www.google.com/maps/dir//St.+Dominic's+Cathedral+Kanjirappally,+HQ5Q%2BHMV,+Kokkappally,+Kanjirappally,+Kerala+686507/@9.654253,76.722501,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3b0635d7b76a8203:0x74ae71ac0160ba44!2m2!1d76.7891745!2d9.5589772?entry=ttu&g_ep=EgoyMDI2MDYwMy4xIKXMDSoASAFQAw%3D%3D"
-          target="_blank"
-          rel="noopener"
-        >
-          Open Map
+        <a class="map-btn" id="mapButton" href="#" target="_blank" rel="noopener">
+          Open in Maps
         </a>
       </section>
 
       <footer class="footer">
-        <p>With love,</p>
-        <strong>Anu &amp; John</strong>
+        <div class="footer__line" aria-hidden="true"></div>
+        <p>With all our love,</p>
+        <strong>Angel &amp; Febin</strong>
       </footer>
+
     </main>
   </body>
 </html>
