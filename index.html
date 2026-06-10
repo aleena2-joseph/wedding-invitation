@@ -1,0 +1,169 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover" />
+    <title>Angel & Febin | Wedding Invitation</title>
+    <meta name="description" content="Angel and Febin invite you to celebrate their wedding." />
+    <meta property="og:title" content="Angel & Febin | Wedding Invitation" />
+    <meta property="og:type" content="website" />
+    <meta property="og:image" content="assets/IMG_8494.JPG.jpeg />
+    <meta name="theme-color" content="#0d1f17" />
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,500;1,400&family=DM+Sans:wght@300;400;500&display=swap" rel="stylesheet" />
+    <link rel="preload" href="assets/couple-hero.jpg" as="image" />
+    <link rel="preload" href="assets/finding-love.mp3" as="audio" />
+    <link rel="stylesheet" href="styles.css" />
+    <script defer src="script.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/three.js/r128/three.min.js"></script>
+    <script defer src="rings.js"></script>
+  </head>
+  <body>
+    <audio id="music" src="assets/finding-love.mp3" preload="metadata" loop></audio>
+
+    <!-- Cover screen -->
+    <div class="cover" id="cover" aria-label="Opening wedding invitation">
+      <div class="cover__bg" aria-hidden="true"></div>
+      <div class="cover__overlay"></div>
+      <div class="cover__content">
+        <div class="cover__monogram" aria-hidden="true">A <span>&amp;</span> F</div>
+        <p class="label">You are cordially invited</p>
+        <h1>
+          <span data-edit="brideName">Angel</span>
+          <em>&amp;</em>
+          <span data-edit="groomName">Febin</span>
+        </h1>
+        <p class="cover__date" data-edit="displayDate">December 28 · 2025</p>
+        <button class="open-btn" id="openInvite" type="button" aria-label="Open invitation">
+          Open Invitation
+        </button>
+      </div>
+    </div>
+
+    <!-- Main invitation -->
+    <main class="shell" id="invitation">
+
+      <!-- Music toggle -->
+      <button class="music-btn" id="musicToggle" type="button" aria-label="Toggle background music">
+        <span class="music-btn__icon" aria-hidden="true"><i></i><i></i><i></i></span>
+        <span id="musicLabel">Music</span>
+      </button>
+
+      <!-- Hero -->
+      <section class="hero wrap reveal">
+        <div class="hero__photo">
+          <img src="assets/IMG_8496.JPG.jpeg" alt="Angel and Febin" />
+          <div class="hero__photo-border" aria-hidden="true"></div>
+        </div>
+        <div class="hero__text">
+          <p class="label">Together with their families</p>
+          <h2 data-edit="coupleName">Angel &amp; Febin</h2>
+          <p class="body-text">
+            With hearts full of gratitude, we invite you to witness
+            our union and share in this moment of joy.
+          </p>
+          <div class="divider" aria-hidden="true"><span></span></div>
+        </div>
+      </section>
+
+      <!-- Scratch card -->
+      <section class="section wrap reveal" aria-labelledby="scratchTitle">
+        <p class="label">A little surprise</p>
+        <h2 id="scratchTitle">Save the Date</h2>
+        <div class="scratch-card" id="scratchCard">
+          <div class="scratch-secret">
+            <p class="scratch-secret__month">December</p>
+            <strong>28</strong>
+            <span>2025 · 10 AM</span>
+          </div>
+          <canvas id="scratchCanvas" aria-label="Scratch to reveal the wedding date"></canvas>
+        </div>
+        <p class="hint" id="scratchHint">Swipe to reveal the date</p>
+      </section>
+
+      <!-- Countdown -->
+      <section class="section wrap reveal" aria-labelledby="countdownTitle">
+        <p class="label">Counting down to forever</p>
+        <h2 id="countdownTitle">Until We Say I Do</h2>
+        <div class="timer" id="timer" aria-live="polite">
+          <div><strong id="days">00</strong><span>Days</span></div>
+          <div><strong id="hours">00</strong><span>Hours</span></div>
+          <div><strong id="minutes">00</strong><span>Minutes</span></div>
+          <div><strong id="seconds">00</strong><span>Seconds</span></div>
+        </div>
+      </section>
+
+      <!-- 3D Rings & Game -->
+      <section class="section wrap reveal rings-section" aria-labelledby="ringsTitle">
+        <p class="label">Our promise</p>
+        <h2 id="ringsTitle">The Rings</h2>
+        <p class="body-text rings-sub">Two rings. One forever. Drag to spin — then play a little game.</p>
+        <div id="rings-mount"></div>
+      </section>
+
+      <!-- Story panels -->
+      <section class="story wrap" aria-label="Our story">
+        <article class="panel reveal">
+          <div class="panel__photo">
+            <img src="assets/IMG_8502.JPG.jpeg" alt="Angel and Febin portrait" loading="lazy" />
+          </div>
+          <div class="panel__copy">
+            <p class="label">Our journey</p>
+            <h2>Two souls, one story</h2>
+            <p class="body-text">
+              Every love story is beautiful, but ours is our favourite.
+              We are grateful for the grace that brought us together.
+            </p>
+          </div>
+        </article>
+        <article class="panel panel--mirror reveal">
+          <div class="panel__photo">
+            <img src="assets/IMG_8500.JPG.jpeg" alt="Candid wedding portrait" loading="lazy" />
+          </div>
+          <div class="panel__copy">
+            <p class="label">With love</p>
+            <h2>Share our joy</h2>
+            <p class="body-text">
+              Your presence, blessings, and laughter are the most precious
+              gifts as we step into this new chapter.
+            </p>
+          </div>
+        </article>
+      </section>
+
+      <!-- Gallery -->
+      <section class="section wrap reveal" aria-labelledby="galleryTitle">
+        <p class="label">Captured moments</p>
+        <h2 id="galleryTitle">Gallery</h2>
+        <div class="gallery">
+          <img src="assets/IMG_8497.JPG.jpeg" alt="Portrait near arches" loading="lazy" />
+          <img src="assets/IMG_8498.JPG.jpeg" alt="Garden portrait" loading="lazy" />
+          <img src="assets/IMG_8495.JPG.jpeg" alt="Cover portrait" loading="lazy" />
+          <img src="assets/IMG_8493.JPG.jpeg" alt="Evening portrait" loading="lazy" />
+          <img src="assets/IMG_8492.JPG.jpeg" alt="Evening portrait" loading="lazy" />
+        </div>
+      </section>
+
+      <!-- Venue -->
+      <section class="venue-section section wrap reveal" aria-labelledby="venueTitle">
+        <p class="label">Wedding ceremony</p>
+        <h2 id="venueTitle" data-edit="venue">Kanjirappally</h2>
+        <p class="venue-detail">December 28 · 2025 <span></span> 10 AM</p>
+        <p class="body-text">
+          We would be honoured to have you beside us as we begin this sacred journey together.
+        </p>
+        <a class="map-btn" id="mapButton" href="#" target="_blank" rel="noopener">
+          Open in Maps
+        </a>
+      </section>
+
+      <footer class="footer">
+        <div class="footer__line" aria-hidden="true"></div>
+        <p>With all our love,</p>
+        <strong>Angel &amp; Febin</strong>
+      </footer>
+
+    </main>
+  </body>
+</html>
