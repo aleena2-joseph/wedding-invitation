@@ -615,40 +615,53 @@ a {
    TOKENS
 ───────────────────────────────────────── */
 :root {
-  --emerald:    #1a3d2b;
+  --emerald: #1a3d2b;
   --emerald-md: #2a5c40;
   --emerald-lt: #3d7a57;
-  --ivory:      #faf7f0;
+  --ivory: #faf7f0;
   --ivory-warm: #f0ead8;
-  --gold:       #c8a96e;
-  --ink:        #1a1a18;
-  --muted:      #6b7a6f;
-  --shadow:     0 28px 64px rgba(26, 61, 43, 0.16);
+  --gold: #c8a96e;
+  --ink: #1a1a18;
+  --muted: #6b7a6f;
+  --shadow: 0 28px 64px rgba(26, 61, 43, 0.16);
 }
 
 /* ─────────────────────────────────────────
    RESET & BASE
 ───────────────────────────────────────── */
-*, *::before, *::after { box-sizing: border-box; }
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
 
-html { scroll-behavior: smooth; }
+html {
+  scroll-behavior: smooth;
+}
 
 body {
   margin: 0;
   background: var(--ivory);
   color: var(--ink);
-  font-family: 'DM Sans', system-ui, sans-serif;
+  font-family: "DM Sans", system-ui, sans-serif;
   min-height: 100vh;
 }
 
-img { display: block; width: 100%; }
-button, a { -webkit-tap-highlight-color: transparent; }
+img {
+  display: block;
+  width: 100%;
+}
+button,
+a {
+  -webkit-tap-highlight-color: transparent;
+}
 
 /* ─────────────────────────────────────────
    TYPE SCALE
 ───────────────────────────────────────── */
-h1, h2 {
-  font-family: 'Playfair Display', Georgia, serif;
+h1,
+h2 {
+  font-family: "Playfair Display", Georgia, serif;
   font-weight: 400;
   margin: 0;
   line-height: 0.94;
@@ -661,7 +674,7 @@ h1, h2 {
   letter-spacing: 0.3em;
   text-transform: uppercase;
   color: var(--gold);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
 }
 
 .body-text {
@@ -705,7 +718,11 @@ h1, h2 {
 .cover__overlay {
   position: absolute;
   inset: 0;
-  background: linear-gradient(160deg, rgba(10, 30, 20, 0.55) 0%, rgba(26, 61, 43, 0.78) 100%);
+  background: linear-gradient(
+    160deg,
+    rgba(10, 30, 20, 0.55) 0%,
+    rgba(26, 61, 43, 0.78) 100%
+  );
 }
 
 .cover__content {
@@ -717,7 +734,7 @@ h1, h2 {
 }
 
 .cover__monogram {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-style: italic;
   font-size: clamp(1.1rem, 5vw, 1.4rem);
   color: var(--gold);
@@ -762,23 +779,30 @@ h1, h2 {
   border-radius: 2px;
   background: transparent;
   color: var(--ivory);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.22em;
   text-transform: uppercase;
   cursor: pointer;
-  transition: background 0.3s, color 0.3s;
+  transition:
+    background 0.3s,
+    color 0.3s;
   position: relative;
   overflow: hidden;
 }
 
 .open-btn::after {
-  content: '';
+  content: "";
   position: absolute;
   inset: -30% auto -30% -55%;
   width: 40%;
-  background: linear-gradient(90deg, transparent, rgba(255,255,255,0.5), transparent);
+  background: linear-gradient(
+    90deg,
+    transparent,
+    rgba(255, 255, 255, 0.5),
+    transparent
+  );
   transform: rotate(20deg);
   animation: shimmer 3s ease-in-out infinite;
 }
@@ -790,7 +814,9 @@ h1, h2 {
 /* ─────────────────────────────────────────
    LAYOUT SHELL
 ───────────────────────────────────────── */
-.shell { overflow: hidden; }
+.shell {
+  overflow: hidden;
+}
 
 .wrap {
   width: min(100%, 800px);
@@ -825,7 +851,7 @@ h1, h2 {
   background: rgba(26, 61, 43, 0.85);
   backdrop-filter: blur(12px);
   color: var(--ivory);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.64rem;
   font-weight: 500;
   letter-spacing: 0.14em;
@@ -851,8 +877,12 @@ h1, h2 {
 .music-btn.is-playing .music-btn__icon i {
   animation: barPulse 0.75s ease-in-out infinite alternate;
 }
-.music-btn.is-playing .music-btn__icon i:nth-child(2) { animation-delay: 0.12s; }
-.music-btn.is-playing .music-btn__icon i:nth-child(3) { animation-delay: 0.26s; }
+.music-btn.is-playing .music-btn__icon i:nth-child(2) {
+  animation-delay: 0.12s;
+}
+.music-btn.is-playing .music-btn__icon i:nth-child(3) {
+  animation-delay: 0.26s;
+}
 
 /* ─────────────────────────────────────────
    HERO
@@ -931,7 +961,7 @@ h1, h2 {
 
 .scratch-secret__month {
   margin: 0;
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.78rem;
   font-weight: 500;
   letter-spacing: 0.26em;
@@ -940,7 +970,7 @@ h1, h2 {
 }
 
 .scratch-secret strong {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(5rem, 26vw, 8rem);
   line-height: 0.84;
   color: var(--emerald);
@@ -948,7 +978,7 @@ h1, h2 {
 }
 
 .scratch-secret span {
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.72rem;
   letter-spacing: 0.2em;
   text-transform: uppercase;
@@ -990,7 +1020,7 @@ h1, h2 {
 
 .timer strong {
   display: block;
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: clamp(1.6rem, 9vw, 2.6rem);
   color: var(--emerald);
   line-height: 1;
@@ -1076,7 +1106,7 @@ h1, h2 {
 }
 
 .venue-detail span::before {
-  content: '';
+  content: "";
   display: inline-block;
   width: 4px;
   height: 4px;
@@ -1095,13 +1125,15 @@ h1, h2 {
   border: 1px solid var(--emerald);
   background: var(--emerald);
   color: var(--ivory);
-  font-family: 'DM Sans', sans-serif;
+  font-family: "DM Sans", sans-serif;
   font-size: 0.72rem;
   font-weight: 500;
   letter-spacing: 0.2em;
   text-decoration: none;
   text-transform: uppercase;
-  transition: background 0.28s, color 0.28s;
+  transition:
+    background 0.28s,
+    color 0.28s;
 }
 
 .map-btn:hover {
@@ -1119,10 +1151,12 @@ h1, h2 {
   font-size: 1rem;
 }
 
-.footer p { margin: 0 0 6px; }
+.footer p {
+  margin: 0 0 6px;
+}
 
 .footer strong {
-  font-family: 'Playfair Display', serif;
+  font-family: "Playfair Display", serif;
   font-size: 2rem;
   font-weight: 400;
   color: var(--emerald);
@@ -1157,7 +1191,9 @@ h1, h2 {
 .reveal {
   opacity: 0;
   transform: translateY(30px);
-  transition: opacity 0.9s ease, transform 0.9s ease;
+  transition:
+    opacity 0.9s ease,
+    transform 0.9s ease;
 }
 
 .reveal.is-visible {
@@ -1169,7 +1205,9 @@ h1, h2 {
    DESKTOP
 ───────────────────────────────────────── */
 @media (min-width: 760px) {
-  .wrap { padding-inline: 40px; }
+  .wrap {
+    padding-inline: 40px;
+  }
 
   .hero {
     grid-template-columns: 1fr 1fr;
@@ -1177,23 +1215,34 @@ h1, h2 {
     gap: 48px;
   }
 
-  .hero__photo { width: min(28vw, 300px); margin: 0 auto; }
-  .hero__text { text-align: left; }
-  .divider { margin-left: 0; }
+  .hero__photo {
+    width: min(28vw, 300px);
+    margin: 0 auto;
+  }
+  .hero__text {
+    text-align: left;
+  }
+  .divider {
+    margin-left: 0;
+  }
 
   .panel {
     grid-template-columns: 1fr 1fr;
     align-items: center;
   }
 
-  .panel--mirror .panel__photo { order: 2; }
+  .panel--mirror .panel__photo {
+    order: 2;
+  }
 }
 
 /* ─────────────────────────────────────────
    REDUCED MOTION
 ───────────────────────────────────────── */
 @media (prefers-reduced-motion: reduce) {
-  *, *::before, *::after {
+  *,
+  *::before,
+  *::after {
     animation-duration: 0.01ms !important;
     animation-iteration-count: 1 !important;
     transition-duration: 0.01ms !important;
@@ -1205,16 +1254,26 @@ h1, h2 {
    KEYFRAMES
 ───────────────────────────────────────── */
 @keyframes bgDrift {
-  to { transform: scale(1.1) translateY(-1.5%); }
+  to {
+    transform: scale(1.1) translateY(-1.5%);
+  }
 }
 
 @keyframes shimmer {
-  0%, 30%  { left: -60%; }
-  70%, 100% { left: 130%; }
+  0%,
+  30% {
+    left: -60%;
+  }
+  70%,
+  100% {
+    left: 130%;
+  }
 }
 
 @keyframes barPulse {
-  to { height: 14px; }
+  to {
+    height: 14px;
+  }
 }
 
 @keyframes petalFall {

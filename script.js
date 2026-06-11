@@ -299,25 +299,25 @@
 // }`;
 // document.head.appendChild(ks);
 const invitation = {
-  brideName:      "Angel",
-  groomName:      "Febin",
-  coupleName:     "Angel & Febin",
-  displayDate:    "December 28 · 2025",
-  weddingDateISO: "2025-12-28T10:00:00+05:30",
-  venue:          "Kanjirappally",
-  mapLink:        "https://www.google.com/maps/dir//St.+Dominic's+Cathedral+Kanjirappally,+HQ5Q%2BHMV,+Kokkappally,+Kanjirappally,+Kerala+686507/@9.654253,76.722501,11z/data=!4m8!4m7!1m0!1m5!1m1!1s0x3b0635d7b76a8203:0x74ae71ac0160ba44!2m2!1d76.7891745!2d9.5589772?entry=ttu",
+  brideName: "Angel",
+  groomName: "Febin",
+  coupleName: "Angel & Febin",
+  displayDate: "July 2 · 2026",
+  weddingDateISO: "2026-07-02T12:00:00+05:30",
+  venue: "St Antony's Church Chengalam",
+  mapLink: "https://maps.app.goo.gl/9i8jCd9MkGbykrWp7",
 };
 
 // ─── DOM references ───────────────────────────────────────────────────────────
-const cover       = document.querySelector("#cover");
-const openInvite  = document.querySelector("#openInvite");
-const music       = document.querySelector("#music");
+const cover = document.querySelector("#cover");
+const openInvite = document.querySelector("#openInvite");
+const music = document.querySelector("#music");
 const musicToggle = document.querySelector("#musicToggle");
-const musicLabel  = document.querySelector("#musicLabel");
-const mapButton   = document.querySelector("#mapButton");
+const musicLabel = document.querySelector("#musicLabel");
+const mapButton = document.querySelector("#mapButton");
 const scratchCanvas = document.querySelector("#scratchCanvas");
-const scratchCard   = document.querySelector("#scratchCard");
-const scratchHint   = document.querySelector("#scratchHint");
+const scratchCard = document.querySelector("#scratchCard");
+const scratchHint = document.querySelector("#scratchHint");
 
 // ─── Populate data-edit fields ────────────────────────────────────────────────
 document.querySelectorAll("[data-edit]").forEach((node) => {
@@ -361,15 +361,17 @@ const revealObserver = new IntersectionObserver(
       if (entry.isIntersecting) entry.target.classList.add("is-visible");
     });
   },
-  { threshold: 0.15 }
+  { threshold: 0.15 },
 );
-document.querySelectorAll(".reveal").forEach((el) => revealObserver.observe(el));
+document
+  .querySelectorAll(".reveal")
+  .forEach((el) => revealObserver.observe(el));
 
 // ─── Countdown ────────────────────────────────────────────────────────────────
 const weddingTime = new Date(invitation.weddingDateISO).getTime();
 const timerEls = {
-  days:    document.querySelector("#days"),
-  hours:   document.querySelector("#hours"),
+  days: document.querySelector("#days"),
+  hours: document.querySelector("#hours"),
   minutes: document.querySelector("#minutes"),
   seconds: document.querySelector("#seconds"),
 };
@@ -377,8 +379,8 @@ const pad = (v) => String(v).padStart(2, "0");
 
 function updateTimer() {
   const dist = Math.max(0, weddingTime - Date.now());
-  timerEls.days.textContent    = pad(Math.floor(dist / 86400000));
-  timerEls.hours.textContent   = pad(Math.floor((dist % 86400000) / 3600000));
+  timerEls.days.textContent = pad(Math.floor(dist / 86400000));
+  timerEls.hours.textContent = pad(Math.floor((dist % 86400000) / 3600000));
   timerEls.minutes.textContent = pad(Math.floor((dist % 3600000) / 60000));
   timerEls.seconds.textContent = pad(Math.floor((dist % 60000) / 1000));
 }
@@ -388,14 +390,14 @@ setInterval(updateTimer, 1000);
 // ─── Scratch card ─────────────────────────────────────────────────────────────
 let scratchCtx;
 let isScratching = false;
-let hasRevealed  = false;
+let hasRevealed = false;
 
 function drawScratchLayer() {
-  const rect  = scratchCard.getBoundingClientRect();
+  const rect = scratchCard.getBoundingClientRect();
   const ratio = window.devicePixelRatio || 1;
-  scratchCanvas.width  = Math.floor(rect.width  * ratio);
+  scratchCanvas.width = Math.floor(rect.width * ratio);
   scratchCanvas.height = Math.floor(rect.height * ratio);
-  scratchCanvas.style.width  = `${rect.width}px`;
+  scratchCanvas.style.width = `${rect.width}px`;
   scratchCanvas.style.height = `${rect.height}px`;
 
   scratchCtx = scratchCanvas.getContext("2d", { willReadFrequently: true });
@@ -403,9 +405,9 @@ function drawScratchLayer() {
 
   // Emerald gradient scratch layer
   const grad = scratchCtx.createLinearGradient(0, 0, rect.width, rect.height);
-  grad.addColorStop(0,    "#1a3d2b");
-  grad.addColorStop(0.5,  "#2a5c40");
-  grad.addColorStop(1,    "#0d2218");
+  grad.addColorStop(0, "#1a3d2b");
+  grad.addColorStop(0.5, "#2a5c40");
+  grad.addColorStop(1, "#0d2218");
   scratchCtx.fillStyle = grad;
   scratchCtx.fillRect(0, 0, rect.width, rect.height);
 
@@ -440,8 +442,8 @@ function checkReveal() {
 function revealCard() {
   hasRevealed = true;
   scratchCanvas.style.transition = "opacity 0.6s ease";
-  scratchCanvas.style.opacity    = "0";
-  scratchHint.textContent        = "We cannot wait to celebrate with you ♥";
+  scratchCanvas.style.opacity = "0";
+  scratchHint.textContent = "We cannot wait to celebrate with you ♥";
   dropPetals();
 }
 
@@ -451,7 +453,7 @@ function dropPetals() {
     p.className = "petal";
     p.style.left = `${Math.random() * 100}vw`;
     p.style.setProperty("--drift", `${Math.random() * 110 - 55}px`);
-    p.style.setProperty("--fall",  `${2.4 + Math.random() * 2.2}s`);
+    p.style.setProperty("--fall", `${2.4 + Math.random() * 2.2}s`);
     p.style.animationDelay = `${Math.random() * 0.5}s`;
     document.body.appendChild(p);
     p.addEventListener("animationend", () => p.remove());
@@ -466,8 +468,14 @@ scratchCanvas.addEventListener("pointerdown", (e) => {
 scratchCanvas.addEventListener("pointermove", (e) => {
   if (isScratching) scratchAt(e.clientX, e.clientY);
 });
-scratchCanvas.addEventListener("pointerup",     () => { isScratching = false; });
-scratchCanvas.addEventListener("pointercancel", () => { isScratching = false; });
+scratchCanvas.addEventListener("pointerup", () => {
+  isScratching = false;
+});
+scratchCanvas.addEventListener("pointercancel", () => {
+  isScratching = false;
+});
 
-window.addEventListener("resize", () => { if (!hasRevealed) drawScratchLayer(); });
-window.addEventListener("load",   drawScratchLayer);
+window.addEventListener("resize", () => {
+  if (!hasRevealed) drawScratchLayer();
+});
+window.addEventListener("load", drawScratchLayer);
